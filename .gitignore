@@ -3,6 +3,12 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# Project artifacts
+data/raw/
+data/processed/
+figures/
+models/
+
 # C extensions
 *.so
 
