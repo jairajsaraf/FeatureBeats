@@ -205,3 +205,34 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# FeatureBeats Specific
+# Data files (large datasets should not be tracked)
+data/raw/*.csv
+data/raw/*.zip
+data/processed/*.csv
+data/processed/*.parquet
+data/external/*.csv
+
+# Model files
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.pth
+models/saved_models/
+
+# Logs
+logs/
+*.log
+
+# Output files
+outputs/
+figures/
+plots/
+
+# Kaggle
+kaggle.json
+
+# Notebook outputs (if not using nbstripout)
+*.ipynb_checkpoints

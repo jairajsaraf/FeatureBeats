@@ -1,0 +1,73 @@
+# FeatureBeats Configuration
+
+# Data paths
+data:
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+  external_data_dir: "data/external"
+  spotify_csv: "data/raw/data.csv"
+
+# Model training
+training:
+  random_seed: 42
+  test_size: 0.2
+  validation_size: 0.1
+
+  # Feature engineering
+  features:
+    audio_features:
+      - acousticness
+      - danceability
+      - energy
+      - instrumentalness
+      - liveness
+      - speechiness
+      - valence
+      - tempo
+      - loudness
+
+    metadata_features:
+      - duration_ms
+      - key
+      - mode
+      - explicit
+      - year
+
+  # Normalization
+  normalize: true
+  normalization_method: "standard"  # Options: standard, minmax, robust
+
+# Analysis
+analysis:
+  min_year: 1921
+  max_year: 2020
+
+  # Temporal grouping
+  time_bins:
+    - "year"
+    - "decade"
+
+  # Popularity thresholds
+  popularity_thresholds:
+    low: 33
+    medium: 66
+    high: 100
+
+# Visualization
+visualization:
+  default_figsize: [12, 6]
+  style: "whitegrid"
+  color_palette: "Set2"
+  save_format: "png"
+  dpi: 300
+
+# Logging
+logging:
+  level: "INFO"  # Options: DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/featurebeats.log"
+
+# Kaggle API (for dataset download)
+kaggle:
+  dataset: "ektanegi/spotifydata-19212020"
+  download_path: "data/raw"
