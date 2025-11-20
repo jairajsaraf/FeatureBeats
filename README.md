@@ -469,6 +469,69 @@ For questions or issues:
 
 ---
 
+## Advanced Features (Bonus)
+
+### 🚀 Additional Notebooks
+
+Beyond the core 3-week curriculum, we've included advanced techniques:
+
+#### 04 - SMOTE & Sampling Techniques
+**Notebook**: `04_Advanced_SMOTE_Sampling.ipynb`
+
+Explores advanced sampling methods for handling class imbalance:
+- **SMOTE** (Synthetic Minority Over-sampling Technique)
+- **ADASYN** (Adaptive Synthetic Sampling)
+- **Borderline-SMOTE**
+- **SMOTE + Tomek Links** (combined over/under-sampling)
+
+**Runtime**: ~15 minutes
+
+**Key Insights**:
+- When SMOTE helps vs when class weighting is sufficient
+- Trade-offs between precision and recall
+- Comparison of all sampling strategies
+
+#### 05 - Feature Engineering
+**Notebook**: `05_Feature_Engineering.ipynb`
+
+Creates advanced features to boost model performance:
+- **Interaction Terms**: energy×danceability, valence×energy, etc.
+- **Polynomial Features**: Squared terms for non-linear relationships
+- **Domain-Specific Features**: party_factor, acoustic_contrast
+- **Temporal Features**: year_normalized, year_period
+
+**Runtime**: ~10 minutes
+
+**Impact**: Typically 2-5% improvement in F1 score
+
+### 🌐 Web Application
+
+#### Interactive Streamlit App
+**File**: `app.py`
+
+A beautiful web interface for making predictions!
+
+**Features**:
+- 🎯 Real-time hit prediction
+- 📊 Interactive sliders for all audio features
+- 📈 Probability visualization
+- 🔍 Feature importance insights
+- 💡 Model explanations
+
+**Launch the app**:
+```bash
+streamlit run app.py
+```
+
+Then open your browser to `http://localhost:8501`
+
+**Screenshot Features**:
+- Adjust 9 audio feature sliders
+- Get instant hit probability prediction
+- View feature contributions
+- See model performance metrics
+- Access SHAP visualizations
+
 ## Quick Reference
 
 ### Installation
@@ -476,22 +539,40 @@ For questions or issues:
 pip install -r requirements.txt
 ```
 
-### Run All Notebooks
+### Run Core Notebooks
 ```bash
 jupyter notebook
 # Then run notebooks in order: 00 → 01 → 02 → 03
 ```
 
+### Run Advanced Notebooks (Optional)
+```bash
+jupyter notebook
+# Run: 04 (SMOTE), 05 (Feature Engineering)
+```
+
+### Launch Web App
+```bash
+streamlit run app.py
+# Opens in browser at localhost:8501
+```
+
 ### Expected Runtime
+**Core Notebooks:**
 - Setup: 5 minutes
 - Week 1: 20 minutes
 - Week 2: 15 minutes
 - Week 3: 30-45 minutes (or 10 minutes with SKIP_TUNING=True)
 
+**Advanced Notebooks (Optional):**
+- SMOTE Sampling: 15 minutes
+- Feature Engineering: 10 minutes
+
 ### Key Outputs
-- **Models**: `models/final_xgboost.pkl`
-- **Best Figure**: `figures/shap_feature_importance.png`
-- **Comparison**: `figures/model_comparison.png`
+- **Models**: `models/final_xgboost.pkl`, `models/best_sampling_model.pkl`
+- **Best Figures**: `figures/shap_feature_importance.png`, `figures/model_comparison.png`
+- **Datasets**: `data/processed/hits_dataset.csv`, `data/processed/hits_dataset_engineered.csv`
+- **Web App**: Interactive prediction interface
 
 ---
 
