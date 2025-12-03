@@ -208,11 +208,11 @@ __marimo__/
 
 # Machine Learning / Data Science specific
 # Large data files
-data/raw/*.csv
-data/raw/*.json
-data/raw/*.parquet
-data/processed/*.csv
-data/processed/*.parquet
+# data/raw/*.csv
+# data/raw/*.json
+# data/raw/*.parquet
+# data/processed/*.csv
+# data/processed/*.parquet
 
 # Model files (optional - uncomment if models are too large)
 # models/*.pkl
